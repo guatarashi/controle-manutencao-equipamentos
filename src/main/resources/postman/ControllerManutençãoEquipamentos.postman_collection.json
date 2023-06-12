@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "dfbe469b-ace3-4cb7-aebe-7b3fc4b202fe",
+		"name": "ControllerManutençãoEquipamentos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "OrdemServicoSaveController",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"descricao\": \"Problema de impressora\",\n    \"responsavel\": \"João\",\n    \"cliente\": {\n        \"nome\" : \"cliente1\",\n        \"endereco\" : {\n            \"cidade\": \"São Paulo - SP\",\n            \"logradouro\": \"Avenida Tiete\",\n            \"numero\": \"10\",\n            \"complemento\": \"\",\n            \"bairro\": \"Centro\",\n            \"cep\": \"15.997-022\"\n        },\n        \"email\": \"cliente@email.com\",\n        \"telefone\" : \"11 2222-3456\"\n    },\n    \"equipamento\": {\n        \"tipo\": \"impressora\",\n        \"marca\": \"epson\",\n        \"problema\": \"não imprime\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/controle-manutencao-equipamentos/ordem-servicos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"controle-manutencao-equipamentos",
+						"ordem-servicos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AcompanhamentoOrdemServicoController",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"descricao\": \"inicio do atendimento\",\n    \"termino\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/controle-manutencao-equipamentos/ordem-servicos/1/acompanhamento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"controle-manutencao-equipamentos",
+						"ordem-servicos",
+						"1",
+						"acompanhamento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OrdemServicoFetchController",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"responsavel\": \"\",\n    \"cliente\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/controle-manutencao-equipamentos/ordem-servicos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"controle-manutencao-equipamentos",
+						"ordem-servicos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OrdemServicoFetchController /{idOrdemServico}",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/controle-manutencao-equipamentos/ordem-servicos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"controle-manutencao-equipamentos",
+						"ordem-servicos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OrdemServicoFetchController - pendentes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/controle-manutencao-equipamentos/ordem-servicos/pendentes?responsavel=João",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"controle-manutencao-equipamentos",
+						"ordem-servicos",
+						"pendentes"
+					],
+					"query": [
+						{
+							"key": "responsavel",
+							"value": "João"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,4 @@
+#Servidor Web
+server:
+  port: 8080
+  context-path: /controle-manutencao-equipamentos
